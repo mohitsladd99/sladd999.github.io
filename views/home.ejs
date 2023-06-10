@@ -1,0 +1,29 @@
+<%-include("partials/header"); -%>
+    <div class="container text-start px-0 " style="height:90vh;">
+        <h1>Notes section</h1>
+
+
+        <div class="row">
+            <% for(let i=0;i<userdata.length;i++){ %>
+                <div class="col-md-10 mx-auto border  border-dark rounded mt-4 px-6 ">
+                    <h1>
+                        <%=userdata[i].title%>
+                    </h1>
+                
+               
+
+                       <% let data=userdata[i].textdata;%>
+                        <%let newpara=data.substring(0,100)%>
+
+                <p><%=newpara%>....<a href="/post/<%=userdata[i].title%>">readmore</a></p>
+
+                </div>
+                <% }%>
+        </div>
+
+
+
+    </div>
+
+
+    <%-include("partials/footer"); -%>
